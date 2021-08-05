@@ -10,6 +10,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Document(collection = "payment")
 @Getter
@@ -23,9 +24,10 @@ public class Payment {
 	private String id;
 	
 	private double amount;
-	
+
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date datePayment;
 	
-	private Customer_credit customer_credit;
+	private CustomerCredit customer_credit;
 	
 }

@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
 import java.util.Date;
 
 @Document(collection = "credit")
@@ -24,12 +23,11 @@ public class Credit {
 	@Id
 	private String id;
 	
-	private Activetype active_type;
+	private ActiveType active_type;
 
 	private double capital;
 
-	@Column(name = "fecalta")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date createAt;
 
 	private double commission;

@@ -17,7 +17,7 @@ import java.util.Date;
 
 @Slf4j(topic = "CREDIT_CONTROLLER")
 @RestController
-@RequestMapping("/credit")
+@RequestMapping("/api/credit")
 public class CreditController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CreditController.class);
@@ -32,7 +32,7 @@ public class CreditController {
                 .doOnNext(s -> LOGGER.info("listOfCredit"));
     }
 
-    @GetMapping
+    @GetMapping("/find")
     public Mono<ResponseEntity<Credit>> findCredit(@RequestParam String id){
 
         return service.findById(id).map(c -> ResponseEntity
